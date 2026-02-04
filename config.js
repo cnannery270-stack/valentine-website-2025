@@ -37,16 +37,16 @@ const CONFIG = {
     // Love meter messages
     // They show up depending on how far they slide the meter
     loveMessages: {
-        extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows when they go past 5000%
-        high: "To infinity and beyond! 🚀💝",              // Shows when they go past 1000%
-        normal: "And beyond! 🥰"                           // Shows when they go past 100%
+        extreme: "Woohoooooooo🥰🚀💝",  // Shows when they go past 5000%
+        high: "Woooooo💝",              // Shows when they go past 1000%
+        normal: "Yayyy"                           // Shows when they go past 100%
     },
 
     // Messages that appear after they say "Yes!"
     celebration: {
         title: "I love you so much, I'm so lucky that you came into my life🎉💝",
         message: "You owe me a hug!!",
-        emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
+        emojis: "💜🌙✨🥰💋💕"  // These will bounce around
     },
 
     // Color scheme for the website
@@ -74,8 +74,8 @@ const CONFIG = {
         enabled: true,                     // Music feature is enabled
         autoplay: true,                    // Try to autoplay (note: some browsers may block this)
         musicUrl: "luna.mp3", // Music streaming URL
-        startText: "🎵 Play Music",        // Button text to start music
-        stopText: "🔇 Stop Music",         // Button text to stop music
+        startText: "🎵 Play Our Song",        // Button text to start music
+        stopText: "🔇 Pause Our Song",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)
     }
 };
