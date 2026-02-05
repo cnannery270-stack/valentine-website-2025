@@ -1,228 +1,209 @@
-/* CSS Variables - Will be updated by JavaScript */
-:root {
-    /* Colors (default lilac palette; config.js / JS may override these) */
-    --background-color-1: #e6d6ff;
-    --background-color-2: #f8f3ff;
-    --button-color: #b388eb;
-    --button-hover: #c6a4f4;
-    --text-color: #6a4c93;
+/* =========================================
+   🌸 LILAC VALENTINE THEME (CLEAN VERSION)
+   ========================================= */
 
-    /* Animations */
-    --float-duration: 15s;
-    --float-distance: 50px;
-    --bounce-speed: 0.5s;
-    --heart-explosion-size: 1.5;
+:root {
+  --background-color-1: #e6d6ff;
+  --background-color-2: #f8f3ff;
+  --button-color: #b388eb;
+  --button-hover: #c6a4f4;
+  --text-color: #6a4c93;
+
+  --float-duration: 15s;
+  --float-distance: 50px;
+  --bounce-speed: 0.5s;
 }
 
+/* ======================
+   Base layout
+   ====================== */
+
 body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, var(--background-color-1), var(--background-color-2));
-    font-family: "Poppins", Arial, sans-serif;
-    overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    var(--background-color-1),
+    var(--background-color-2)
+  );
+  font-family: "Poppins", Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 /* Main card */
 .container {
-    background: rgba(255, 255, 255, 0.75);
-    padding: 2rem;
-    border-radius: 22px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.10);
-    text-align: center;
-    max-width: 600px;
-    margin: 20px;
-    overflow: visible !important;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.78);
+  padding: 2rem;
+  border-radius: 22px;
+  text-align: center;
+  max-width: 600px;
+  margin: 20px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Photo (for <img src="us.jpg" class="photo"> ) */
+/* ======================
+   Title
+   ====================== */
+
+h1 {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+}
+
+/* ======================
+   Photo
+   ====================== */
+
 .photo {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 26px;
-    margin: 14px auto 18px;
-    display: block;
-    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.14);
-    border: 4px solid rgba(179, 136, 235, 0.35);
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 26px;
+  display: block;
+  margin: 14px auto 18px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.14);
+  border: 4px solid rgba(179, 136, 235, 0.35);
 }
 
-/* Floating emojis */
+/* ======================
+   Floating emojis
+   ====================== */
+
 .floating-elements {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.heart, .bear {
-    position: absolute;
-    font-size: 2rem;
-    animation: float var(--float-duration) linear infinite;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.12));
+.heart,
+.bear {
+  position: absolute;
+  font-size: 2rem;
+  animation: float var(--float-duration) linear infinite;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
 }
 
 @keyframes float {
-    0% { transform: translateY(100vh) translateX(0); }
-    100% { transform: translateY(-100px) translateX(var(--float-distance)); }
+  0% {
+    transform: translateY(100vh) translateX(0);
+  }
+  100% {
+    transform: translateY(-100px) translateX(var(--float-distance));
+  }
 }
 
-/* Buttons */
+/* ======================
+   Buttons
+   ====================== */
+
 .cute-btn {
-    background: var(--button-color);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 20px;
-    color: white;
-    font-size: 1.05rem;
-    cursor: pointer;
-    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+  background: var(--button-color);
+  border: none;
+  padding: 10px 22px;
+  margin: 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
 }
 
 .cute-btn:hover {
-    transform: scale(1.06);
-    background: var(--button-hover);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.14);
+  transform: scale(1.06);
+  background: var(--button-hover);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
 }
 
-.hidden { display: none; }
-
-.disabled-btn {
-    opacity: 0.7;
-    cursor: not-allowed;
-    pointer-events: none;
+.hidden {
+  display: none;
 }
 
-/* Secret answer */
+/* ======================
+   Secret answer button
+   ====================== */
+
 .secret-answer {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    margin-top: 0;
-    opacity: 0.2;
-    transition: opacity 0.3s;
-    transform: scale(0.7);
-    z-index: 2;
-    animation: subtle-hint 2s infinite alternate;
-    animation-delay: 5s;
-}
-
-.secret-answer .cute-btn {
-    font-size: 0.8rem;
-    padding: 5px 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.25;
+  transform: scale(0.75);
+  transition: opacity 0.3s;
+  animation: subtle-hint 2s infinite alternate;
 }
 
 .secret-answer:hover {
-    opacity: 1;
-    animation: none;
+  opacity: 1;
+  animation: none;
 }
 
-/* Love meter */
-.love-meter {
-    position: relative;
-    width: 100%;
-    margin: 20px auto;
-    overflow: visible;
-    padding: 10px 0;
+@keyframes subtle-hint {
+  from { opacity: 0.25; }
+  to   { opacity: 0.4; }
 }
 
-.love-meter p {
-    font-size: 1.1em;
-    margin: 15px 0;
-    color: var(--text-color);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+/* ======================
+   Celebration text
+   ====================== */
+
+.celebration-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  animation: bounce var(--bounce-speed) infinite alternate;
+  margin-top: 20px;
 }
 
-.slider {
-    width: 100%;
-    height: 25px;
-    background: linear-gradient(to right, var(--button-color), var(--button-hover), rgba(198, 164, 244, 0.55));
-    -webkit-appearance: none;
-    appearance: none;
-    outline: none;
-    position: relative;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(106, 76, 147, 0.14);
-    transition: all 0.3s ease;
+@keyframes bounce {
+  from { transform: scale(1); }
+  to   { transform: scale(1.15); }
 }
 
-.slider:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 20px rgba(106, 76, 147, 0.20);
+/* ======================
+   Music button
+   ====================== */
+
+.music-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
 }
 
-/* Track */
-.slider::-webkit-slider-runnable-track,
-.slider::-moz-range-track {
-    width: 100%;
-    height: 25px;
-    background: linear-gradient(to right, var(--button-color), var(--button-hover), rgba(198, 164, 244, 0.55));
-    border-radius: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
+.music-btn {
+  background: var(--button-color);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-/* Thumb */
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(135deg, var(--text-color), var(--button-color));
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(106, 76, 147, 0.22);
-    position: relative;
-    z-index: 10;
-    margin-top: -5px;
-    border: 3px solid white;
-    transition: all 0.2s ease;
+/* ======================
+   🐰 MIFFY BOUNCE
+   ====================== */
+
+.miffy {
+  width: 90px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+  animation: miffyBounce 2.8s ease-in-out infinite;
 }
 
-.slider::-webkit-slider-thumb:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(106, 76, 147, 0.28);
+@keyframes miffyBounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
-
-.slider::-moz-range-thumb {
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(135deg, var(--text-color), var(--button-color));
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(106, 76, 147, 0.22);
-    position: relative;
-    z-index: 10;
-    border: 3px solid white;
-    transition: all 0.2s ease;
-}
-
-.slider::-moz-range-thumb:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(106, 76, 147, 0.28);
-}
-
-/* Love text bits */
-#extraLove {
-    color: var(--text-color);
-    font-weight: bold;
-    animation: bounce 0.5s infinite alternate;
-    display: block;
-    padding: 6px 12px;
-    border-radius: 12px;
-    background: rgba(179, 136, 235, 0.12);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    margin-top: 5px;
-}
-
-#extraLove.supe
