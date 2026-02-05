@@ -1,5 +1,5 @@
 /* =========================================
-   💜 LILAC VALENTINE THEME — CLEAN + FINAL
+   💜 LILAC VALENTINE THEME — REFINED (MOBILE FIX)
    ========================================= */
 
 :root {
@@ -35,20 +35,25 @@ body {
 }
 
 /* ======================
-   Main card
+   Main card (mobile friendly)
    ====================== */
 
 .container {
   background: rgba(255, 255, 255, 0.78);
-  padding: 2rem;
+  padding: 28px 22px 90px; /* extra bottom padding so fixed elements never overlap */
   border-radius: 22px;
   text-align: center;
-  max-width: 600px;
+
+  width: calc(100% - 40px);
+  max-width: 420px;
   margin: 20px;
 
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+
+  position: relative;
+  z-index: 2;
 }
 
 /* ======================
@@ -59,7 +64,7 @@ h1 {
   font-size: 2.4rem;
   font-weight: 600;
   color: var(--text-color);
-  margin-bottom: 18px;
+  margin: 6px 0 18px;
 }
 
 /* ======================
@@ -67,15 +72,64 @@ h1 {
    ====================== */
 
 .photo {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 26px;
   display: block;
-  margin: 14px auto 18px;
+  margin: 10px auto 18px;
 
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.14);
   border: 4px solid rgba(179, 136, 235, 0.35);
+}
+
+/* ======================
+   Questions + spacing
+   ====================== */
+
+.question-section {
+  margin-top: 10px;
+}
+
+.question-section h2 {
+  margin: 14px 0 16px;
+  line-height: 1.25;
+  font-size: 1.35rem;
+  color: #111;
+}
+
+/* Make buttons stack nicely on mobile */
+.question-section .cute-btn {
+  width: 240px;
+  max-width: 82%;
+  display: block;
+  margin: 10px auto;
+}
+
+/* ======================
+   Buttons
+   ====================== */
+
+.cute-btn {
+  background: var(--button-color);
+  border: none;
+  padding: 12px 22px;
+  border-radius: 22px;
+  color: white;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.cute-btn:hover {
+  transform: scale(1.05);
+  background: var(--button-hover);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.hidden {
+  display: none;
 }
 
 /* ======================
@@ -87,4 +141,110 @@ h1 {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-i
+  z-index: 1;
+}
+
+.heart,
+.bear {
+  position: absolute;
+  font-size: 2rem;
+  animation: float var(--float-duration) linear infinite;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0);
+  }
+  100% {
+    transform: translateY(-100px) translateX(var(--float-distance));
+  }
+}
+
+/* ======================
+   Secret answer (moved away from main buttons)
+   ====================== */
+
+.secret-answer {
+  position: fixed;
+  bottom: 18px;
+  left: 18px;     /* moved to left so it doesn’t cover your “Yes” */
+  right: auto;
+  opacity: 0.18;
+  transform: scale(0.72);
+  transition: opacity 0.3s;
+  z-index: 3;
+}
+
+.secret-answer:hover {
+  opacity: 1;
+}
+
+/* ======================
+   Celebration text
+   ====================== */
+
+.celebration-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  animation: bounce var(--bounce-speed) infinite alternate;
+  margin: 18px 0 8px;
+}
+
+@keyframes bounce {
+  from { transform: scale(1); }
+  to   { transform: scale(1.12); }
+}
+
+/* ======================
+   Music button (top right)
+   ====================== */
+
+.music-controls {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+}
+
+.music-btn {
+  background: var(--button-color);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.music-btn:hover {
+  background: var(--button-hover);
+  transform: scale(1.04);
+}
+
+/* ======================
+   🐰 MIFFY — WAVE (corner)
+   ====================== */
+
+.miffy {
+  width: 78px;
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 3;
+  pointer-events: none;
+
+  transform-origin: bottom center;
+  animation: miffyWave 3s ease-in-out infinite;
+}
+
+@keyframes miffyWave {
+  0%   { transform: rotate(0deg) translateY(0); }
+  20%  { transform: rotate(-6deg) translateY(-2px); }
+  40%  { transform: rotate(6deg) translateY(-4px); }
+  60%  { transform: rotate(-4deg) translateY(-2px); }
+  80%  { transform: rotate(4deg) translateY(-1px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
