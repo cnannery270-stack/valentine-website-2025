@@ -1,5 +1,5 @@
 /* =========================================
-   🌸 LILAC VALENTINE THEME (CLEAN VERSION)
+   💜 LILAC VALENTINE THEME — CLEAN + FINAL
    ========================================= */
 
 :root {
@@ -24,16 +24,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Poppins", Arial, sans-serif;
+  overflow-x: hidden;
+
   background: linear-gradient(
     135deg,
     var(--background-color-1),
     var(--background-color-2)
   );
-  font-family: "Poppins", Arial, sans-serif;
-  overflow-x: hidden;
 }
 
-/* Main card */
+/* ======================
+   Main card
+   ====================== */
+
 .container {
   background: rgba(255, 255, 255, 0.78);
   padding: 2rem;
@@ -41,6 +45,7 @@ body {
   text-align: center;
   max-width: 600px;
   margin: 20px;
+
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
@@ -51,9 +56,9 @@ body {
    ====================== */
 
 h1 {
-  color: var(--text-color);
-  font-weight: 600;
   font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--text-color);
   margin-bottom: 18px;
 }
 
@@ -68,6 +73,7 @@ h1 {
   border-radius: 26px;
   display: block;
   margin: 14px auto 18px;
+
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.14);
   border: 4px solid rgba(179, 136, 235, 0.35);
 }
@@ -81,129 +87,4 @@ h1 {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1;
-}
-
-.heart,
-.bear {
-  position: absolute;
-  font-size: 2rem;
-  animation: float var(--float-duration) linear infinite;
-  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(100vh) translateX(0);
-  }
-  100% {
-    transform: translateY(-100px) translateX(var(--float-distance));
-  }
-}
-
-/* ======================
-   Buttons
-   ====================== */
-
-.cute-btn {
-  background: var(--button-color);
-  border: none;
-  padding: 10px 22px;
-  margin: 10px;
-  border-radius: 20px;
-  color: white;
-  font-size: 1.05rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
-}
-
-.cute-btn:hover {
-  transform: scale(1.06);
-  background: var(--button-hover);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
-}
-
-.hidden {
-  display: none;
-}
-
-/* ======================
-   Secret answer button
-   ====================== */
-
-.secret-answer {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  opacity: 0.25;
-  transform: scale(0.75);
-  transition: opacity 0.3s;
-  animation: subtle-hint 2s infinite alternate;
-}
-
-.secret-answer:hover {
-  opacity: 1;
-  animation: none;
-}
-
-@keyframes subtle-hint {
-  from { opacity: 0.25; }
-  to   { opacity: 0.4; }
-}
-
-/* ======================
-   Celebration text
-   ====================== */
-
-.celebration-text {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--text-color);
-  animation: bounce var(--bounce-speed) infinite alternate;
-  margin-top: 20px;
-}
-
-@keyframes bounce {
-  from { transform: scale(1); }
-  to   { transform: scale(1.15); }
-}
-
-/* ======================
-   Music button
-   ====================== */
-
-.music-controls {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 10;
-}
-
-.music-btn {
-  background: var(--button-color);
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-/* ======================
-   🐰 MIFFY BOUNCE
-   ====================== */
-
-.miffy {
-  width: 90px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 5;
-  animation: miffyBounce 2.8s ease-in-out infinite;
-}
-
-@keyframes miffyBounce {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
+  z-i
