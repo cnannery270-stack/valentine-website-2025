@@ -44,7 +44,7 @@ const CONFIG = {
 
     // Messages that appear after they say "Yes!"
     celebration: {
-        title: "I love you so much, I'm so lucky that you came into my life🎉💝",
+        title: "I love you so much, I'm so proud of you and feel so so lucky that you're mine. I hope you have a good first Valentines with me as you will be stuck with me for many more hehe🎉💝",
         message: "You owe me a hug!!",
         emojis: "💜🌙✨🥰💋💕"  // These will bounce around
     },
